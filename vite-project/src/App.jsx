@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import ProductCard from "./components/ProductCard";
-import CartDrawer from "./components/CartDrawer";
-import Toast from "./components/Toast";
-import Sidebar from "./components/Sidebar";
-import Pagination from "./components/Pagination";
+import Header from "./components/header";
+import Hero from "./components/hero";
+import ProductCard from "./components/productCard";
+import CartDrawer from "./components/cartDrawer";
+import Toast from "./components/toast";
+import Sidebar from "./components/sidebar";
+import Pagination from "./components/pagination";
 import { PRODUCTS, PAGE_SIZE } from "./data/product.js";
 import "./App.css";
 
@@ -23,7 +23,6 @@ export default function App() {
 
   const [toast, setToast] = useState(null);
 
-  // ✅ FIX: Apply/remove 'dark' class on <html> whenever dark state changes
   useEffect(() => {
     if (dark) {
       document.documentElement.classList.add("dark");
@@ -49,7 +48,6 @@ export default function App() {
     setCartOpen(true);
   };
 
-  // Filtering logic
   const filtered = PRODUCTS.filter((p) => {
     const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = category === "All" || p.category === category;
@@ -58,12 +56,10 @@ export default function App() {
     return matchesSearch && matchesCategory && matchesGender && matchesPrice;
   });
 
-  // ✅ Pagination logic
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const displayed = filtered.slice(startIndex, startIndex + PAGE_SIZE);
 
-  // Reset to page 1 whenever filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [search, category, gender, price]);
@@ -105,14 +101,12 @@ export default function App() {
         />
 
         <main style={{ flex: 1 }}>
-          {/* Results count */}
           <div className="toolbar">
             <span style={{ fontSize: 14, color: "var(--muted)" }}>
               Showing {displayed.length} of {filtered.length} products
             </span>
           </div>
 
-          {/* Product Grid */}
           {displayed.length === 0 ? (
             <div className="no-results">
               <p>😕 No products found. Try adjusting your filters.</p>
@@ -131,7 +125,6 @@ export default function App() {
             </div>
           )}
 
-          {/* ✅ Pagination Component */}
           {totalPages > 1 && (
             <Pagination
               currentPage={currentPage}
