@@ -1,0 +1,15 @@
+
+.hero {
+  background: linear-gradient(135deg, #fdf3e3, #fae8cc);
+  padding: 40px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+html.dark .hero {
+  background: linear-gradient(135deg, #2a1a0a, #1a0f08);
+}
+.hero-title {
+  font-family: var(--font-h);
+  font-size: 34px;
+  color: var(--accent);
+}

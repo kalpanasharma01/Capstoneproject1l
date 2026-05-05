@@ -1,0 +1,39 @@
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* CSS Variables — your design tokens */
+:root {
+  --accent:   #c0392b;
+  --accent2:  #e67e22;
+  --bg:       #faf7f2;
+  --surface:  #ffffff;
+  --surface2: #f5f0e8;
+  --text:     #1a1210;
+  --muted:    #6b5c50;
+  --border:   #e8ddd0;
+  --font-h:   'Playfair Display', Georgia, serif;
+  --font-b:   'Lato', sans-serif;
+}
+
+/* Dark mode — toggled by adding class to <html> */
+html.dark {
+  --bg:      #0f0e0d;
+  --surface: #1a1816;
+  --text:    #f0ebe0;
+  --border:  #2a2520;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-b);
+  transition: background .3s, color .3s;
+}
+
+/* Animations used across components */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
