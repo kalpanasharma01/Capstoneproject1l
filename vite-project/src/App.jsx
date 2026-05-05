@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Header from "./components/header";
-import Hero from "./components/hero";
-import ProductCard from "./components/productCard";
-import CartDrawer from "./components/cartDrawer";
-import Toast from "./components/toast";
-import Sidebar from "./components/sidebar";
-import Pagination from "./components/pagination";
+import Header from "./Components/header";
+import Hero from "./Components/hero";
+import ProductCard from "./Components/productCard";
+import CartDrawer from "./Components/cartDrawer";
+import Toast from "./Components/toast";
+import Sidebar from "./Components/sidebar";
+import Pagination from "./Components/pagination";
 import { PRODUCTS, PAGE_SIZE } from "./data/product.js";
 import "./App.css";
 
