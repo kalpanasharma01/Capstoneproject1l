@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Components/header";
 import Hero from "./Components/hero";
 import ProductCard from "./Components/productcard";
-import CartDrawer from "./Components/cartDrawer";
+import CartDrawer from "./Components/cartdrawer";
 import Toast from "./Components/toast";
 import Sidebar from "./Components/sidebar";
 import Pagination from "./Components/pagination";
