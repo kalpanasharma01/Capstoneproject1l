@@ -1,6 +1,5 @@
-// Sidebar.jsx
 import { CATEGORIES, GENDERS } from '../data/product.js'
-import './Sidebar.css'
+import './sidebar.css'
 
 export default function Sidebar({
   category, setCategory,
@@ -11,7 +10,6 @@ export default function Sidebar({
 }) {
   return (
     <aside className="sidebar">
-      {/* Category filter */}
       <div className="filter-group">
         <div className="group-title">Category</div>
         {CATEGORIES.map(c => (
@@ -25,7 +23,6 @@ export default function Sidebar({
         ))}
       </div>
 
-      {/* Gender filter */}
       <div className="filter-group">
         <div className="group-title">For</div>
         {GENDERS.map(g => (
@@ -39,7 +36,6 @@ export default function Sidebar({
         ))}
       </div>
 
-      {/* Price range */}
       <div className="filter-group">
         <div className="group-title">Price</div>
         <input type="range" min={0} max={15000}

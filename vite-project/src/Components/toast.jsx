@@ -1,8 +1,7 @@
-// Toast.jsx
-import './Toast.css'
+import './toast.css'
 
 export default function Toast({ message }) {
-  if (!message) return null   // render nothing if no message
+  if (!message) return null   
 
   return (
     <div className="toast">{message}</div>

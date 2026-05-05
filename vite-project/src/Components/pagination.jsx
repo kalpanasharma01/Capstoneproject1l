@@ -1,8 +1,7 @@
-import './Pagination.css'
+import './pagination.css'
 
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
 
-  // Build page number array with "..." gaps
   const getPageNumbers = () => {
     const pages = []
     if (totalPages <= 7) {
@@ -22,7 +21,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   return (
     <div className="pagination">
 
-      {/* Previous Button */}
       <button
         className="page-btn prev-next"
         onClick={() => onPageChange(currentPage - 1)}
@@ -31,7 +29,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         ← Prev
       </button>
 
-      {/* Page Numbers */}
       {getPageNumbers().map((page, index) =>
         page === '...' ? (
           <span key={`dots-${index}`} className="page-dots">...</span>
@@ -46,7 +43,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         )
       )}
 
-      {/* Next Button */}
       <button
         className="page-btn prev-next"
         onClick={() => onPageChange(currentPage + 1)}

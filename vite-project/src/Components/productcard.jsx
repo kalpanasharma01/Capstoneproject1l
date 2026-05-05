@@ -12,7 +12,6 @@ export default function ProductCard({ p, wishlist, toggleWishlist, addToCart }) 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image area */}
       <div className="card-img">
         <span className="card-emoji">{p.img}</span>
         {p.tag && TAG_COLORS[p.tag] && (
@@ -35,7 +34,6 @@ export default function ProductCard({ p, wishlist, toggleWishlist, addToCart }) 
         {isWished ? '♥' : '♡'}
       </button>
 
-      {/* Info area */}
       <div className="card-info">
         <div className="card-name">{p.name}</div>
         <div className="card-price">₹{p.price.toLocaleString()}</div>
